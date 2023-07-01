@@ -13,7 +13,7 @@ function RegisterPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isAuthenticated) navigate("/tasks");
+    if (isAuthenticated) navigate("/perfil");
   }, [isAuthenticated]);
 
   const onSubmit = handleSubmit(async (values) => {
@@ -21,7 +21,7 @@ function RegisterPage() {
   });
 
   return (
-    <div className="bg-zinc-800 max-w-md p-10 rounded-md">
+    <div className="bg-zinc-800 max-w-md p-10">
       {RegisterErrors.map((error, i) => (
         <div className="bg-red-500 p-2 text-white" key={i}>
           {error}

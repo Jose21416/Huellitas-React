@@ -3,19 +3,34 @@ import { AuthProvider } from "./context/AuthContext";
 
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage.jsx";
+import HomePage from "./pages/HomePage";
+import Contacto from "./pages/Contacto";
+import Productos from "./pages/productos";
+import Servicios from "./pages/Servicios";
+import Cuidados from "./pages/Cuidados";
+import ProfilePage from "./pages/ProfilePage";
+
+import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<h1>HomePage</h1>}></Route>
-          <Route path="/login" element={<LoginPage />}></Route>
-          <Route path="/register" element={<RegisterPage />}></Route>
-          <Route path="/contacto" element={<h1>Contacto</h1>}></Route>
-          <Route path="/cuidados" element={<h1>Cuidados</h1>}></Route>
-          <Route path="/productos" element={<h1>Productos</h1>}></Route>
-          <Route path="/servicios" element={<h1>Servicios</h1>}></Route>
+          <Route path="/" element={<HomePage></HomePage>}></Route>
+          <Route path="/login" element={<LoginPage></LoginPage>}></Route>
+          <Route
+            path="/register"
+            element={<RegisterPage></RegisterPage>}
+          ></Route>
+          <Route path="/contacto" element={<Contacto></Contacto>}></Route>
+          <Route path="/cuidados" element={<Cuidados></Cuidados>}></Route>
+          <Route path="/productos" element={<Productos></Productos>}></Route>
+          <Route path="/servicios" element={<Servicios></Servicios>}></Route>
+
+          <Route element={<ProtectedRoute></ProtectedRoute>}>
+            <Route path="/perfil" element={<ProfilePage></ProfilePage>}></Route>
+          </Route>
         </Routes>
       </BrowserRouter>
     </AuthProvider>
