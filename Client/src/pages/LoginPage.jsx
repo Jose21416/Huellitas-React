@@ -22,7 +22,7 @@ function LoginPage() {
             {error}
           </div>
         ))}
-        <h1 className="text-2xl font-bold">Login</h1>
+        <h1 className="text-2xl font-bold">Iniciar sesión</h1>
 
         <form onSubmit={onSubmit}>
           <input
@@ -39,9 +39,9 @@ function LoginPage() {
             placeholder="Password"
           ></input>
           {errors.password && (
-            <p className="text-red-500">Password is required</p>
+            <p className="text-red-500">La contraseña es requerida</p>
           )}
-          <button type="submit">Login</button>
+          <button type="submit">Iniciar sesión</button>
         </form>
         <p className="flex gap-x-2 justify-between">
           ¿No tienes una cuenta? <Link to="/register" className="text-sky-500">Regístrate</Link>

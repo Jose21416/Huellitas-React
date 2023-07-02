@@ -11,11 +11,13 @@ import Cuidados from "./pages/Cuidados";
 import ProfilePage from "./pages/ProfilePage";
 
 import ProtectedRoute from "./ProtectedRoute";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
+        <Navbar></Navbar>
         <Routes>
           <Route path="/" element={<HomePage></HomePage>}></Route>
           <Route path="/login" element={<LoginPage></LoginPage>}></Route>
