@@ -31,7 +31,7 @@ function LoginPage() {
             className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2"
             placeholder="Email"
           ></input>
-          {errors.email && <p className="text-red-500">Email is required</p>}
+          {errors.email && <p className="text-red-500">*Correo electrónico requerido*</p>}
           <input
             type="password"
             {...register("password", { required: true })}
@@ -39,7 +39,7 @@ function LoginPage() {
             placeholder="Password"
           ></input>
           {errors.password && (
-            <p className="text-red-500">La contraseña es requerida</p>
+            <p className="text-red-500">*Contraseña requerida*</p>
           )}
           <button type="submit">Iniciar sesión</button>
         </form>
