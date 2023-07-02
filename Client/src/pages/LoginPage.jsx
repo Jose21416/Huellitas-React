@@ -22,29 +22,39 @@ function LoginPage() {
             {error}
           </div>
         ))}
-        <h1 className="text-2xl font-bold">Iniciar sesión</h1>
+        <h1 className="text-3xl font-bold my-2">Inicia sesión</h1>
 
         <form onSubmit={onSubmit}>
           <input
             type="email"
             {...register("email", { required: true })}
             className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2"
-            placeholder="Email"
+            placeholder="Correo electrónico"
           ></input>
-          {errors.email && <p className="text-red-500">*Correo electrónico requerido*</p>}
+          {errors.email && (
+            <p className="text-red-500">*Correo electrónico requerido*</p>
+          )}
           <input
             type="password"
             {...register("password", { required: true })}
             className="w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2"
-            placeholder="Password"
+            placeholder="Contraseña"
           ></input>
           {errors.password && (
             <p className="text-red-500">*Contraseña requerida*</p>
           )}
-          <button type="submit">Iniciar sesión</button>
+          <button
+            type="submit"
+            className="bg-red-500 text-white px-4 py-2 rounded-md my-2"
+          >
+            Iniciar sesión
+          </button>
         </form>
         <p className="flex gap-x-2 justify-between">
-          ¿No tienes una cuenta? <Link to="/register" className="text-sky-500">Regístrate</Link>
+          ¿No tienes una cuenta?{" "}
+          <Link to="/register" className="text-sky-500">
+            Regístrate
+          </Link>
         </p>
       </div>
     </div>
